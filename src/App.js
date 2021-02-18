@@ -3,6 +3,7 @@ import {Switch,Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 
+import Homepage from './components/Homepage';
 import List from './components/List';
 import Details from './components/Details';
 
@@ -31,7 +32,8 @@ class App extends React.Component {
             </div>
             <div className="col-xl-9 col-lg-9 col-md-7 col-sm-10 col-10">
               <Switch>
-                <Route exact path='/:i' render = {(props)=> <Details {...props} listOfPeople={this.state.listOfPeople}/>} />
+                <Route exact path='/' render = {()=> <Homepage/>} />
+                <Route path='/:i/:name' render = {(props)=> <Details {...props} listOfPeople={this.state.listOfPeople}/>} />
               </Switch>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -13,7 +12,7 @@ class List extends React.Component {
           this.props.listOfPeople?.map((el,i) => <div key={i}>
                                                     <Avatar src={`https://i.mdel.net/i/db/${el.image}`} alt={el.name} />
                                                     <div className="category">
-                                                      <Link to={`/${i}`}>{el.name}</Link>
+                                                      <Link to={`/${i}/${el.name}`}>{el.name}</Link>
                                                       <p>{el.type}</p>
                                                     </div>
                                                   </div>
